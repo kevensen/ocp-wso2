@@ -4,7 +4,7 @@ node("master") {
     
     stage 'Checkout Carbon'
     sh "mkdir carbon-apimgt"
-    dir path: carbon-apimgt
+    dir path: 'carbon-apimgt'
     git branch: '2.1', url: 'https://github.com/wso2/carbon-apimgt.git'
 
     stage 'Build Carbon'
@@ -13,7 +13,7 @@ node("master") {
     stage 'Checkout'
     sh "cd .."
     sh "mkdir product-apim"
-    dir path: product-apim
+    dir path: 'product-apim'
     git branch: '2.1.x', url: 'https://github.com/kevensen/product-apim.git'
 
     stage 'Build'
