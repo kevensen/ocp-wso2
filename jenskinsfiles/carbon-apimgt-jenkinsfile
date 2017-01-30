@@ -1,0 +1,9 @@
+node("master") {
+    // ** NOTE: This 'M3' maven tool must be configured in the global configuration.
+    
+    stage 'Checkout'
+    git branch: 'master', url: 'https://github.com/wso2/carbon-apimgt.git'
+
+    stage 'Build'
+    sh "mvn install -Dmaven.test.skip=true"
+}

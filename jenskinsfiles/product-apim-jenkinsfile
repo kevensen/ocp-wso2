@@ -1,0 +1,9 @@
+node("master") {
+    
+    stage 'Checkout'
+    git branch: '2.1.x', url: 'https://github.com/kevensen/product-apim.git'
+
+    stage 'Build'
+    sh "mvn install -Dmaven.test.skip=true"
+
+}
