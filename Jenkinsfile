@@ -1,6 +1,6 @@
 node("master") {
     // ** NOTE: This 'M3' maven tool must be configured in the global configuration.
-    def mvnHome = tool 'M3'
+//    def mvnHome = tool 'M3'
     
     stage 'Checkout Carbon'
     sh "mkdir carbon-apimgt"
