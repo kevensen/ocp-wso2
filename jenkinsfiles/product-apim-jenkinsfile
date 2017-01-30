@@ -1,9 +1,10 @@
 node("master") {
+    def mvnHome = tool 'M3'
     
-    stage 'Checkout'
-    git branch: '2.1.x', url: 'https://github.com/kevensen/product-apim.git'
+    stage 'master'
+    git branch: 'master', url: 'https://github.com/kevensen/product-apim.git'
 
     stage 'Build'
-    sh "mvn install -Dmaven.test.skip=true"
+    sh "${mvnHome}/bin/mvn install -Dmaven.test.skip=true"
 
 }
