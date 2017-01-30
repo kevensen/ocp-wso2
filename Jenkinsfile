@@ -8,7 +8,7 @@ node("master") {
     git branch: '2.1', url: 'https://github.com/wso2/carbon-apimgt.git'
 
     stage 'Build Carbon'
-    sh "${mvnHome}/bin/mvn install -Dmaven.test.skip=true"
+    sh "mvn install -Dmaven.test.skip=true"
 
     stage 'Checkout'
     sh "cd .."
@@ -17,6 +17,6 @@ node("master") {
     git branch: '2.1.x', url: 'https://github.com/kevensen/product-apim.git'
 
     stage 'Build'
-    sh "${mvnHome}/bin/mvn install -Dmaven.test.skip=true"
+    sh "mvn install -Dmaven.test.skip=true"
 
 }
